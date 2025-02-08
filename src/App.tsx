@@ -23,12 +23,22 @@ import { GalleryManager } from './pages/dashboard/GalleryManager';
 import { SchoolRequests } from './pages/dashboard/SchoolRequests';
 import { NoticeManager } from './pages/dashboard/NoticeManager';
 import { SettingsPage } from './pages/dashboard/SettingsPage';
+import { SchoolDashboardLayout } from './pages/school/SchoolDashboardLayout';
+import { SchoolDashboardHome } from './pages/school/SchoolDashboardHome';
+import { SchoolProfile } from './pages/school/SchoolProfile';
+import { SchoolStudents } from './pages/school/SchoolStudents';
+import { SchoolTeachers } from './pages/school/SchoolTeachers';
+import { SchoolAttendance } from './pages/school/SchoolAttendance';
+import { SchoolAcademic } from './pages/school/SchoolAcademic';
+import { SchoolReports } from './pages/school/SchoolReports';
+import { SchoolSettings } from './pages/school/SchoolSettings';
+import { SchoolNotifications } from './pages/school/SchoolNotifications';
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        {/* Dashboard Routes */}
+        {/* BRC Dashboard Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="news-events" element={<NewsEventsManager />} />
@@ -39,6 +49,19 @@ export default function App() {
           <Route path="gallery" element={<GalleryManager />} />
           <Route path="schools" element={<SchoolRequests />} />
           <Route path="settings" element={<SettingsPage />} />
+        </Route>
+
+        {/* School Dashboard Routes */}
+        <Route path="/school-dashboard" element={<SchoolDashboardLayout />}>
+          <Route index element={<SchoolDashboardHome />} />
+          <Route path="profile" element={<SchoolProfile />} />
+          <Route path="students" element={<SchoolStudents />} />
+          <Route path="teachers" element={<SchoolTeachers />} />
+          <Route path="attendance" element={<SchoolAttendance />} />
+          <Route path="academic" element={<SchoolAcademic />} />
+          <Route path="reports" element={<SchoolReports />} />
+          <Route path="settings" element={<SchoolSettings />} />
+          <Route path="notifications" element={<SchoolNotifications />} />
         </Route>
 
         {/* Public Routes */}
